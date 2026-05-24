@@ -5,13 +5,13 @@ import { useNavigation } from '../context/NavigationContext'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import styles from '../components/TheoryFest.module.css'
+import poshStyles from './PoshGnash.module.css'
 
 const MEROPRIYATIYA_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/articles', label: 'Статьи' },
   { href: '/interviews', label: 'Интервью' },
   { href: '/playlists', label: 'Плейлисты' },
-  { href: '/poshgnash', label: 'PoshGnash' },
   { href: '/about', label: 'О нас' },
 ]
 
@@ -28,6 +28,20 @@ export default function MeropriyatiyaPage() {
         <title>Мероприятия — Clure</title>
       </Head>
       <Hero title="Мероприятия." fontFamily="sans" scrollTarget="events" />
+
+      <Link href="/poshgnash" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <section style={{ width: '100%', background: '#fff', cursor: 'pointer' }}>
+          <div className={styles.hero} style={{ background: '#fff', color: '#000', paddingTop: '60px', paddingBottom: '2vw', minHeight: '23vw' }}>
+            <p className={poshStyles.headline} style={{ color: '#000', WebkitTextStrokeColor: '#000', textStrokeColor: '#000', display: 'inline-flex', justifyContent: 'center' }}>
+              <span className={poshStyles.headlineWord}>ПОШ</span>
+              <span className={poshStyles.headlineWide}>ГНАШ</span>
+            </p>
+            <p className={poshStyles.subtitle} style={{ color: '#000', textTransform: 'uppercase', marginTop: '3em', maxWidth: 'none', letterSpacing: '0.16em' }}>
+              20 ИЮНЯ<br />МОСКВА, МЕСТО ЗАНГЕЗИ<br />18+
+            </p>
+          </div>
+        </section>
+      </Link>
 
       <section className={styles.page} style={{ minHeight: 'auto' }} id="events">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5vw', padding: '40px 24px', textAlign: 'center' }}>

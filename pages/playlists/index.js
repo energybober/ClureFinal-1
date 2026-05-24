@@ -10,7 +10,6 @@ const PLAYLISTS_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/articles', label: 'Статьи' },
   { href: '/interviews', label: 'Интервью' },
-  { href: '/poshgnash', label: 'PoshGnash' },
   { href: '/meropriyatiya', label: 'Мероприятия' },
   { href: '/about', label: 'О нас' },
 ]

@@ -10,7 +10,6 @@ const INTERVIEWS_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/articles', label: 'Статьи' },
   { href: '/playlists', label: 'Плейлисты' },
-  { href: '/poshgnash', label: 'PoshGnash' },
   { href: '/meropriyatiya', label: 'Мероприятия' },
   { href: '/about', label: 'О нас' },
 ]

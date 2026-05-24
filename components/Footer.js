@@ -31,7 +31,6 @@ export default function Footer({ overlayColor, shadowColor, blackWhite }) {
               <li><Link href="/articles">Статьи</Link></li>
               <li><Link href="/interviews">Интервью</Link></li>
               <li><Link href="/playlists">Плейлисты</Link></li>
-              <li><Link href="/poshgnash">PoshGnash</Link></li>
               <li><Link href="/meropriyatiya">Мероприятия</Link></li>
               <li><Link href="/about">О нас</Link></li>
             </ul>
