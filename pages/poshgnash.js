@@ -29,23 +29,11 @@ export default function PoshGnashPage() {
 
       <main className={styles.main}>
         <section className={styles.poster}>
-          <h1 className={styles.headline}>
-            <span className={styles.headlineWord}>ПОШ</span> <span className={styles.headlineWide}>ГНАШ</span>
-          </h1>
-          <p className={styles.subtitle}>большой сольный концерт</p>
-
-          <div className={styles.graphic}>
-            <div className={styles.photoFrame} aria-hidden="true">
-              <div className={styles.photoInner}>
-                <div className={styles.photoFace} />
-              </div>
-              <div className={styles.photoMask} />
-            </div>
-
-            <div className={`${styles.badge} ${styles.badgeRight}`}>МОСКВА</div>
-            <div className={`${styles.badge} ${styles.badgeLeft}`}>20 ИЮНЯ</div>
-            <a href="https://t.me/mestozangezi" target="_blank" rel="noopener noreferrer" className={`${styles.badge} ${styles.badgeBottom}`}>МЕСТО<br />ЗАНГЕЗИ</a>
-          </div>
+          <img
+            src="/images/afisha_full.png"
+            alt="Постер Posh Gnash — большой сольный концерт 20 июня в Москве, место Зангези"
+            className={styles.posterImage}
+          />
         </section>
 
         <section className={styles.ticketSection}>
