@@ -1,5 +1,5 @@
 .page {
-  background: #000000 !important;
+  background: #fff;
   min-height: 100vh;
   color: #111;
 }
@@ -23,6 +23,48 @@
   height: auto;
   display: block;
   border: 0;
+}
+
+.headline {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(7rem, 12vw, 14rem);
+  line-height: 0.82;
+  letter-spacing: -0.1em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 3px #000;
+  text-stroke: 3px #000;
+  display: inline-block;
+  transform: scaleY(1.5);
+  transform-origin: center top;
+}
+
+.headlineWord,
+.headlineWide {
+  display: inline-block;
+}
+
+.headlineWord {
+  margin-right: 0.22em;
+}
+
+.headlineWide {
+  letter-spacing: -0.05em;
+}
+
+.subtitle {
+  margin: 140px 0 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.15;
+  max-width: 17ch;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
 }
 
 .ticketSection {
@@ -51,6 +93,15 @@
   }
 
   .poster {
+    max-width: 100%;
+  }
+
+  .headline {
+    font-size: clamp(3.2rem, 12vw, 6.8rem);
+    letter-spacing: -0.05em;
+  }
+
+  .subtitle {
     max-width: 100%;
   }
 
