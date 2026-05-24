@@ -11,6 +11,7 @@ const ARTICLES_NAV = [
   { href: '/', label: 'Главная' },
   { href: '/interviews', label: 'Интервью' },
   { href: '/playlists', label: 'Плейлисты' },
+  { href: '/poshgnash', label: 'PoshGnash' },
   { href: '/meropriyatiya', label: 'Мероприятия' },
   { href: '/about', label: 'О нас' },
 ]

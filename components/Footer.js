@@ -3,10 +3,10 @@ import styles from './Footer.module.css'
 
 const BG_URL = '/images/bg.png'
 
-export default function Footer({ overlayColor, shadowColor }) {
+export default function Footer({ overlayColor, shadowColor, blackWhite }) {
   return (
     <footer
-      className={styles.footer}
+      className={`${styles.footer} ${blackWhite ? styles.footerBW : ''}`}
       style={shadowColor ? { '--footer-shadow': shadowColor } : undefined}
     >
       {/* Blurred background */}
@@ -31,6 +31,7 @@ export default function Footer({ overlayColor, shadowColor }) {
               <li><Link href="/articles">Статьи</Link></li>
               <li><Link href="/interviews">Интервью</Link></li>
               <li><Link href="/playlists">Плейлисты</Link></li>
+              <li><Link href="/poshgnash">PoshGnash</Link></li>
               <li><Link href="/meropriyatiya">Мероприятия</Link></li>
               <li><Link href="/about">О нас</Link></li>
             </ul>

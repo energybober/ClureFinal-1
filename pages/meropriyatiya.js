@@ -11,6 +11,7 @@ const MEROPRIYATIYA_NAV = [
   { href: '/articles', label: 'Статьи' },
   { href: '/interviews', label: 'Интервью' },
   { href: '/playlists', label: 'Плейлисты' },
+  { href: '/poshgnash', label: 'PoshGnash' },
   { href: '/about', label: 'О нас' },
 ]
 
