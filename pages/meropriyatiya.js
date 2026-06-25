@@ -31,13 +31,10 @@ export default function MeropriyatiyaPage() {
 
       <Link href="/poshgnash" style={{ textDecoration: 'none', color: 'inherit' }}>
         <section style={{ width: '100%', background: '#fff', cursor: 'pointer' }}>
-          <div className={styles.hero} style={{ background: '#fff', color: '#000', paddingTop: '60px', paddingBottom: '2vw', minHeight: '23vw' }}>
-            <p className={poshStyles.headline} style={{ color: '#000', WebkitTextStrokeColor: '#000', textStrokeColor: '#000', display: 'inline-flex', justifyContent: 'center' }}>
-              <span className={poshStyles.headlineWord}>ПОШ</span>
-              <span className={poshStyles.headlineWide}>ГНАШ</span>
-            </p>
-            <p className={poshStyles.subtitle} style={{ color: '#000', textTransform: 'uppercase', marginTop: '3em', maxWidth: 'none', letterSpacing: '0.16em' }}>
-              20 ИЮНЯ<br />МОСКВА, МЕСТО ЗАНГЕЗИ<br />18+
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5vw', padding: '40px 24px', textAlign: 'center' }}>
+            <h2 className={poshStyles.headline} style={{ fontSize: 'clamp(4.2rem, 8vw, 8rem)', margin: 0, cursor: 'pointer', whiteSpace: 'nowrap', overflowWrap: 'normal' }}>ПОШ ГНАШ</h2>
+            <p className={poshStyles.subtitle} style={{ color: '#000', margin: 0, marginTop: '1.5em', maxWidth: 'none' }}>
+              20 ИЮНЯ<br /><span className={poshStyles.subtitleInline}>МОСКВА, МЕСТО ЗАНГЕЗИ</span><br />18+
             </p>
           </div>
         </section>

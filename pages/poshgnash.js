@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
-import Script from 'next/script'
 import { useNavigation } from '../context/NavigationContext'
 import Footer from '../components/Footer'
 import styles from './PoshGnash.module.css'
@@ -36,22 +35,20 @@ export default function PoshGnashPage() {
           />
         </section>
 
-        <section className={styles.ticketSection}>
-          <button
-            type="button"
-            className={styles.ticketButton}
-            data-tc-event="6a0d5ca4a79dd6341a64ca0f"
-            data-tc-token="eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjlhNzI4NWI4YWQwMTllNzFlODljMjliIn0.7Oreh61Lt5J0lbo4pXAw37BV6uokCjEzuLQNCjcs7ZQ"
-          >
-            Купить билет
-          </button>
+        <section className={styles.photoSection}>
+          {[
+            '/images/ПошГнаш1.webp',
+            '/images/ПошГнаш2.webp',
+            '/images/ПошГнаш3.webp',
+            '/images/ПошГнаш4.webp',
+            '/images/ПошГнаш5.webp',
+          ].map((src, index) => (
+            <div key={src} className={styles.photoCard}>
+              <img src={src} alt={`Фото Posh Gnash ${index + 1}`} />
+            </div>
+          ))}
         </section>
       </main>
-
-      <Script
-        src="https://ticketscloud.com/static/scripts/widget/tcwidget.js"
-        strategy="afterInteractive"
-      />
 
       <Footer blackWhite />
     </div>
