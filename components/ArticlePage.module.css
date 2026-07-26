@@ -247,6 +247,28 @@
   display: block;
 }
 
+.rtVideoWrapper {
+  margin: 2em 0;
+  width: 100%;
+}
+
+.rtVideoEmbed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 6px;
+  display: block;
+  background: #000000;
+}
+
+.rtVideoNative {
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 6px;
+  display: block;
+  background: #000000;
+}
+
 .rtCaption {
   margin-top: 10px;
   font-family: var(--font-sans);

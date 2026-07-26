@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import { PortableText } from '@portabletext/react'
 import client from '../../lib/sanity'
 import urlFor from '../../lib/imageUrl'
+import { useNavigation } from '../../context/NavigationContext'
 import Footer from '../../components/Footer'
 import styles from '../../components/InterviewPage.module.css'
 
@@ -55,6 +57,14 @@ function formatShortDate(dateStr) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
+const INTERVIEWS_NAV = [
+  { href: '/', label: 'Главная' },
+  { href: '/articles', label: 'Статьи' },
+  { href: '/playlists', label: 'Плейлисты' },
+  { href: '/meropriyatiya', label: 'Мероприятия' },
+  { href: '/about', label: 'О нас' },
+]
+
 export async function getStaticPaths() {
   const slugs = await client.fetch(`*[_type == "interview" && defined(slug.current)]{ "slug": slug.current }`)
   const paths = (slugs || []).map((s) => ({ params: { slug: s.slug } }))
@@ -78,9 +88,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function InterviewPage({ interview, moreInterviews = [], slug }) {
+  const { setNavLinks } = useNavigation()
   const imageUrl = interview.mainImage
     ? urlFor(interview.mainImage).width(1600).height(900).auto('format').url()
     : null
+
+  useEffect(() => {
+    setNavLinks(INTERVIEWS_NAV)
+  }, [setNavLinks])
 
   return (
     <>

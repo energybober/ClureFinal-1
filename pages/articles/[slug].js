@@ -1,11 +1,36 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect } from 'react'
 import { PortableText } from '@portabletext/react'
 import client from '../../lib/sanity'
 import urlFor from '../../lib/imageUrl'
 import slugify from '../../lib/slugify'
+import { useNavigation } from '../../context/NavigationContext'
 import Footer from '../../components/Footer'
 import styles from '../../components/ArticlePage.module.css'
+
+function getVideoEmbedUrl(url) {
+  if (!url) return null
+
+  try {
+    const parsedUrl = new URL(url)
+    const host = parsedUrl.hostname.toLowerCase()
+
+    if (host.includes('youtube.com') || host.includes('youtu.be')) {
+      const videoId = parsedUrl.searchParams.get('v') || parsedUrl.pathname.split('/').filter(Boolean).pop()
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : null
+    }
+
+    if (host.includes('vimeo.com')) {
+      const match = parsedUrl.pathname.match(/\/(\d+)(?:\/|$)/)
+      return match ? `https://player.vimeo.com/video/${match[1]}` : null
+    }
+  } catch {
+    return null
+  }
+
+  return null
+}
 
 const portableTextComponents = {
   block: {
@@ -33,6 +58,35 @@ const portableTextComponents = {
         </figure>
       )
     },
+    video: ({ value }) => {
+      const embedUrl = getVideoEmbedUrl(value?.url)
+
+      if (embedUrl) {
+        return (
+          <div className={styles.rtVideoWrapper}>
+            <iframe
+              src={embedUrl}
+              title={value.caption || 'Video'}
+              className={styles.rtVideoEmbed}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            {value.caption && <p className={styles.rtCaption}>{value.caption}</p>}
+          </div>
+        )
+      }
+
+      if (value?.url) {
+        return (
+          <div className={styles.rtVideoWrapper}>
+            <video controls className={styles.rtVideoNative} src={value.url} />
+            {value.caption && <p className={styles.rtCaption}>{value.caption}</p>}
+          </div>
+        )
+      }
+
+      return null
+    },
   },
 }
 
@@ -55,6 +109,14 @@ function formatShortDate(dateStr) {
   const d = new Date(dateStr)
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
+
+const ARTICLES_NAV = [
+  { href: '/', label: 'Главная' },
+  { href: '/interviews', label: 'Интервью' },
+  { href: '/playlists', label: 'Плейлисты' },
+  { href: '/meropriyatiya', label: 'Мероприятия' },
+  { href: '/about', label: 'О нас' },
+]
 
 export async function getStaticPaths() {
   const slugs = await client.fetch(`*[_type == "article" && defined(slug.current)]{ "slug": slug.current }`)
@@ -79,11 +141,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function ArticlePage({ article, moreArticles = [], slug }) {
+  const { setNavLinks } = useNavigation()
   const imageUrl = article.mainImage
     ? urlFor(article.mainImage).width(1600).height(900).auto('format').url()
     : null
 
-
+  useEffect(() => {
+    setNavLinks(ARTICLES_NAV)
+  }, [setNavLinks])
 
   return (
     <>
