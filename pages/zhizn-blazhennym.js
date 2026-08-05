@@ -30,6 +30,12 @@ export default function ZhiznBlazhennymPage() {
     <div className={styles.page}>
       <Head>
         <title>Жизнь блаженным — Clure</title>
+        <meta name="theme-color" content="#020a2d" />
+        <style>{`
+          @media only screen and (max-width: 900px) {
+            html, body { background: #020a2d !important; }
+          }
+        `}</style>
       </Head>
 
       <main className={styles.main}>
