@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import client from '../lib/sanity'
 import { useNavigation } from '../context/NavigationContext'
 import Hero from '../components/Hero'
 import ArticlesList from '../components/ArticlesList'
 import News from '../components/News'
 import Footer from '../components/Footer'
-import tfStyles from '../components/TheoryFest.module.css'
+import homeEventStyles from '../components/HomeEvent.module.css'
 
 const DEFAULT_NAV = [
   { href: '/articles', label: 'Статьи' },
@@ -30,6 +31,18 @@ export default function Home({ page, articles = [], interviews = [], playlists =
         <title>{title}</title>
       </Head>
       <Hero scrollTarget="news" />
+
+      <section className={homeEventStyles.highlight}>
+        <Link href="/zhizn-blazhennym" className={homeEventStyles.card}>
+          <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
+          <p className={homeEventStyles.support}>+ Макс Мухин</p>
+          <p className={homeEventStyles.subtitle}>10 октября</p>
+          <p className={homeEventStyles.meta}>
+            Москва — место Зангези — 18+
+          </p>
+        </Link>
+      </section>
+
       <section style={{ background: '#87c1d3' }}>
         <News interviews={interviews} playlists={playlists} max={3} />
       </section>

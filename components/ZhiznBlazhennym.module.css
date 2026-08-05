@@ -1,0 +1,80 @@
+.page {
+  min-height: 100vh;
+  color: #111;
+  background: #f7f5ee;
+}
+
+.main {
+  padding: 30px 16px 60px;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster {
+  width: 100%;
+  max-width: 1080px;
+  overflow: hidden;
+}
+
+.posterImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.ticketSection {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ticketButton,
+.ticketButton[data-tc-event] {
+  font-family: 'Arial Black', 'Arial Bold', 'Arial', 'Helvetica', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 20px 52px;
+  color: #0d173b !important;
+  background: rgba(251, 247, 239, 0.98) !important;
+  border: 2px solid #0d173b !important;
+  box-shadow: 5px 10px 0px rgba(13, 23, 59, 0.22) !important;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.ticketButton:hover,
+.ticketButton[data-tc-event]:hover {
+  background: rgba(245, 241, 232, 0.98) !important;
+  transform: translateY(-2px);
+  box-shadow: 6px 10px 0px rgba(13, 23, 59, 0.18) !important;
+}
+
+.ticketButton:active {
+  transform: translateY(0);
+  box-shadow: 4px 8px 0px rgba(13, 23, 59, 0.16);
+}
+
+@media (max-width: 900px) {
+  .main {
+    padding: 24px 12px 50px;
+  }
+
+  .ticketSection {
+    margin-top: 28px;
+  }
+
+  .ticketButton {
+    width: 100%;
+    max-width: 360px;
+  }
+}
