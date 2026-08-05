@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useNavigation } from '../context/NavigationContext'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
+import homeEventStyles from '../components/HomeEvent.module.css'
 import styles from '../components/TheoryFest.module.css'
 import poshStyles from './PoshGnash.module.css'
 
@@ -28,6 +29,17 @@ export default function MeropriyatiyaPage() {
         <title>Мероприятия — Clure</title>
       </Head>
       <Hero title="Мероприятия." fontFamily="sans" scrollTarget="events" />
+
+      <section className={homeEventStyles.highlight}>
+        <Link href="/zhizn-blazhennym" className={homeEventStyles.card} style={{ textDecoration: 'none' }}>
+          <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
+          <p className={homeEventStyles.support}>+ Макс Мухин</p>
+          <p className={homeEventStyles.subtitle}>10 октября</p>
+          <p className={homeEventStyles.meta}>
+            Москва — место Зангези — 18+
+          </p>
+        </Link>
+      </section>
 
       <Link href="/poshgnash" style={{ textDecoration: 'none', color: 'inherit' }}>
         <section style={{ width: '100%', background: '#fff', cursor: 'pointer' }}>
