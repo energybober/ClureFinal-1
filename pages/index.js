@@ -42,7 +42,7 @@ export default function Home({ page, articles = [], interviews = [], playlists =
           </Link>
           <Link href="/zhizn-blazh-piter" className={homeEventStyles.eventButton}>
             <p className={homeEventStyles.eventDate}>18 октября</p>
-            <p className={homeEventStyles.eventLocation}>Питер — мачты — 18+</p>
+            <p className={homeEventStyles.eventLocation}>Питер — мачты — 16+</p>
           </Link>
         </div>
       </section>
