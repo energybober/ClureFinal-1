@@ -33,14 +33,18 @@ export default function Home({ page, articles = [], interviews = [], playlists =
       <Hero scrollTarget="news" />
 
       <section className={homeEventStyles.highlight}>
-        <Link href="/zhizn-blazhennym" className={homeEventStyles.card}>
-          <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
-          <p className={homeEventStyles.support}>+ Макс Мухин</p>
-          <p className={homeEventStyles.subtitle}>10 октября</p>
-          <p className={homeEventStyles.meta}>
-            Москва — место Зангези — 18+
-          </p>
-        </Link>
+        <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
+        <p className={homeEventStyles.support}>+ Макс Мухин</p>
+        <div className={homeEventStyles.buttonGroup}>
+          <Link href="/zhizn-blazhennym" className={homeEventStyles.eventButton}>
+            <p className={homeEventStyles.eventDate}>10 октября</p>
+            <p className={homeEventStyles.eventLocation}>Москва — место Зангези — 18+</p>
+          </Link>
+          <Link href="/zhizn-blazh-piter" className={homeEventStyles.eventButton}>
+            <p className={homeEventStyles.eventDate}>18 октября</p>
+            <p className={homeEventStyles.eventLocation}>Питер — мачты — 18+</p>
+          </Link>
+        </div>
       </section>
 
       <section style={{ background: '#87c1d3' }}>

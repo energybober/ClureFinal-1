@@ -31,14 +31,18 @@ export default function MeropriyatiyaPage() {
       <Hero title="Мероприятия." fontFamily="sans" scrollTarget="events" />
 
       <section className={homeEventStyles.highlight}>
-        <Link href="/zhizn-blazhennym" className={homeEventStyles.card} style={{ textDecoration: 'none' }}>
-          <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
-          <p className={homeEventStyles.support}>+ Макс Мухин</p>
-          <p className={homeEventStyles.subtitle}>10 октября</p>
-          <p className={homeEventStyles.meta}>
-            Москва — место Зангези — 18+
-          </p>
-        </Link>
+        <h2 className={homeEventStyles.title}>Жизнь блаженным</h2>
+        <p className={homeEventStyles.support}>+ Макс Мухин</p>
+        <div className={homeEventStyles.buttonGroup}>
+          <Link href="/zhizn-blazhennym" className={homeEventStyles.eventButton}>
+            <p className={homeEventStyles.eventDate}>10 октября</p>
+            <p className={homeEventStyles.eventLocation}>Москва — место Зангези — 18+</p>
+          </Link>
+          <Link href="/zhizn-blazh-piter" className={homeEventStyles.eventButton}>
+            <p className={homeEventStyles.eventDate}>18 октября</p>
+            <p className={homeEventStyles.eventLocation}>Питер — мачты — 18+</p>
+          </Link>
+        </div>
       </section>
 
       <Link href="/poshgnash" style={{ textDecoration: 'none', color: 'inherit' }}>
